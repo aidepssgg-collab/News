@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Daily weather report and 5-day forecast for Tbilisi, Georgia.">
+    <title>Weather Report | Tbilisi, Georgia</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            transition: background 0.3s, color 0.3s;
+        }
+
+        .weather-card:hover {
+            transform: translateY(-5px);
+            transition: 0.3s;
+        }
+
+        .dark-mode {
+            background-color: #121212 !important;
+            color: white !important;
+        }
+
+        .dark-mode .card {
+            background-color: #1e1e1e;
+            color: white;
+        }
+
+        .unit-toggle {
+            cursor: pointer;
+        }
+
+        #clock {
+            font-weight: 500;
+        }
+    </style>
+</head>
+
+<body class="bg-light">
+
+<header>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container">
+            <a class="navbar-brand fw-bold" href="#">🌤 WeatherApp</a>
+
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#navbarNav" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto align-items-lg-center">
+                    <li class="nav-item me-3 text-white" id="clock"></li>
+
+                    <li class="nav-item me-3">
+                        <button class="btn btn-outline-light btn-sm" onclick="toggleDarkMode()">
+                            <i class="bi bi-moon"></i>
+                        </button>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link active" href="#" aria-current="page">Weather</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+</header>
+
+<main class="container my-5">
+
+    <section class="mb-5 text-center">
+        <h2 class="mb-4">Search City</h2>
+        <div class="input-group w-50 mx-auto">
+            <input type="text" class="form-control" placeholder="Enter city name...">
+            <button class="btn btn-primary">
+                <i class="bi bi-search"></i>
+            </button>
+        </div>
+    </section>
+
+    <section class="mb-5">
+        <h2 class="text-center mb-4">Current Weather in Tbilisi</h2>
+
+        <div class="row justify-content-center">
+            <div class="col-md-6">
+                <div class="card shadow weather-card text-center">
+                    <div class="card-body">
+                        <h3 class="card-title">Tbilisi</h3>
+                        <p class="display-4 fw-bold">
+                            <span id="temperature">14</span>°<span class="unit-toggle" onclick="toggleUnit()">C</span>
+                        </p>
+                        <p class="card-text">
+                            <i class="bi bi-cloud-sun-fill text-warning"></i> Partly Cloudy
+                        </p>
+                        <p class="mb-1"><i class="bi bi-droplet"></i> Humidity: 55%</p>
+                        <p><i class="bi bi-wind"></i> Wind: 10 km/h</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="mb-5">
+        <h2 class="text-center mb-4">5-Day Forecast</h2>
+        <div class="row g-3 text-center">
+
+            <div class="col-6 col-md">
+                <div class="card shadow weather-card">
+                    <div class="card-body">
+                        <h5>Mon</h5>
+                        <i class="bi bi-sun-fill fs-2 text-warning"></i>
+                        <p class="fw-bold">16°C</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-6 col-md">
+                <div class="card shadow weather-card">
+                    <div class="card-body">
+                        <h5>Tue</h5>
+                        <i class="bi bi-cloud-rain-fill fs-2 text-primary"></i>
+                        <p class="fw-bold">12°C</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-6 col-md">
+                <div class="card shadow weather-card">
+                    <div class="card-body">
+                        <h5>Wed</h5>
+                        <i class="bi bi-cloud-sun fs-2 text-warning"></i>
+                        <p class="fw-bold">15°C</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-6 col-md">
+                <div class="card shadow weather-card">
+                    <div class="card-body">
+                        <h5>Thu</h5>
+                        <i class="bi bi-cloud-lightning-rain-fill fs-2 text-info"></i>
+                        <p class="fw-bold">13°C</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-6 col-md">
+                <div class="card shadow weather-card">
+                    <div class="card-body">
+                        <h5>Fri</h5>
+                        <i class="bi bi-sun-fill fs-2 text-warning"></i>
+                        <p class="fw-bold">18°C</p>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+</main>
+
+<footer class="bg-dark text-white text-center py-4 mt-5">
+    <div class="container">
+        <p>&copy; 2026 WeatherApp | Built with Bootstrap 5</p>
+        <div>
+            <a href="#" class="text-white me-3"><i class="bi bi-facebook"></i></a>
+            <a href="#" class="text-white me-3"><i class="bi bi-twitter"></i></a>
+            <a href="#" class="text-white"><i class="bi bi-github"></i></a>
+        </div>
+    </div>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+
+<script>
+    function updateClock() {
+        const now = new Date();
+        document.getElementById("clock").innerText = now.toLocaleTimeString();
+    }
+    setInterval(updateClock, 1000);
+    updateClock();
+
+    function toggleDarkMode() {
+        document.body.classList.toggle("dark-mode");
+    }
+
+    function toggleUnit() {
+        const tempElement = document.getElementById("temperature");
+        let temp = parseInt(tempElement.innerText);
+        let unit = document.querySelector(".unit-toggle");
+
+        if (unit.innerText === "C") {
+            temp = Math.round((temp * 9/5) + 32);
+            unit.innerText = "F";
+        } else {
+            temp = Math.round((temp - 32) * 5/9);
+            unit.innerText = "C";
+        }
+
+        tempElement.innerText = temp;
+    }
+</script>
+
+</body>
+</html>
