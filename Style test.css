@@ -1,0 +1,138 @@
+body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: rgb(255, 255, 255);
+    background-color: rgb(30, 30, 30); 
+    margin: 0;
+}
+
+.navbar {
+    width: 100% !important;
+    background-color: rgb(20, 20, 20) !important; /* The darker grey you wanted */
+    border-bottom: 3px solid #004cff !important; /* The blue line */
+    padding: 10px 0 !important;
+    align-self: stretch !important;
+}
+
+.navbar .navbar-brand, 
+.navbar .nav-link {
+    color: #ffffff !important;
+    margin-left: 15px !important;
+    font-size: 22px !important;
+    font-weight: 700 !important;
+    font-family: "Segoe UI", Roboto, sans-serif !important;
+}
+
+.navbar .nav-link:hover {
+    color: #007bff !important; 
+}
+
+/* Forces everything to the far left */
+.navbar .container-fluid {
+    display: flex !important;
+    justify-content: flex-start !important;
+    padding-left: 15px !important;
+}
+.modal-content {
+    background-color: rgb(40, 40, 45) !important; 
+    border: 2px solid #007bff; 
+    border-radius: 8px; 
+}
+
+.btn-success {
+    background-color: #004cff !important;
+    border: none !important;
+    font-weight: bold;
+}
+
+.form-control {
+    background-color: rgb(50, 50, 60) !important;
+    color: white !important; 
+    border: 1px solid #007bff !important; 
+}
+
+.form-control::placeholder {
+    color: rgba(255, 255, 255, 0.7) !important;
+}
+
+.form-control:focus {
+    background-color: rgb(60, 60, 75) !important;
+    color: white !important;
+    border-color: #ff8c00 !important; 
+    box-shadow: none !important;
+}
+
+.Main_Page {
+    width: 100%;          
+    text-align: center;     
+    padding-top: 50px;      
+    display: flex;
+    flex-direction: column;
+    align-items: center;     
+    font-size: 22px;
+    font-weight: 700;
+}
+
+.intro {
+    margin-top: 20px;
+    background-color: rgb(20, 20, 20); 
+    border: 2px solid #007bff;
+    padding: 80px 40px;
+    display: flex;
+    flex-direction: column; 
+    align-items: center;
+    gap: 50px;
+    width: 60%;
+    border-radius: 15px;
+}
+
+.intro h1 {
+    font-size: 67px;
+    font-weight: 700;
+}
+
+.intro h2 {
+    font-size: 50px;
+    font-weight: 760;
+}
+
+.footer-section {
+    width: 100%;
+    background-color: rgb(20, 20, 20); 
+    border-top: 3px solid #004cff;   
+    padding: 40px 0;
+    margin-top: 100px;                
+    color: white;
+}
+
+.footer-section h5 {
+    color: #004cff; 
+    font-weight: 800;
+    margin-bottom: 20px;
+}
+
+.blue-divider {
+    border-top: 1px solid rgba(0, 76, 255, 0.3);
+    margin: 20px auto;
+    width: 50%;
+}
+
+.weather-card:hover {
+    transform: translateY(-5px);
+    transition: 0.3s;
+}
+
+.dark-mode {
+    background-color: #121212 !important;
+    color: white !important;
+}
+
+.dark-mode .card {
+    background-color: #1e1e1e;
+    color: white;
+}
+
+.unit-toggle {
+    cursor: pointer;
+}
